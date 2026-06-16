@@ -1,6 +1,7 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ProjectImageTrailer from '../../components/ui/ProjectImageTrailer.jsx';
 import { projects } from '../../data/profile.js';
 import { useGsapContext } from '../../hooks/useGsapContext.js';
 import ProjectCard from './ProjectCard.jsx';
@@ -9,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectStack() {
   const scope = useRef(null);
+  const [activePreview, setActivePreview] = useState(null);
 
   useGsapContext(scope, () => {
     const cards = gsap.utils.toArray('.project-card');
@@ -54,10 +56,11 @@ export default function ProjectStack() {
 
   return (
     <div ref={scope} className="relative min-h-screen py-10">
+      <ProjectImageTrailer activeProject={activePreview} />
       <div className="relative mx-auto grid max-w-5xl gap-5 rounded-[8px] lg:min-h-[620px] lg:items-center lg:overflow-hidden">
         {projects.map((project, index) => (
           <div key={project.title} className="lg:col-start-1 lg:row-start-1">
-            <ProjectCard project={project} index={index} />
+            <ProjectCard project={project} index={index} onPreviewChange={setActivePreview} />
           </div>
         ))}
       </div>

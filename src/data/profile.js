@@ -86,6 +86,7 @@ export const projects = [
       'Evaluated image quality through model behavior, PSNR, SSIM, and lightweight trade-offs.',
     ],
     metric: 'SISR',
+    previewImage: '/images/ai-lab-visual.png',
   },
   {
     title: 'Fair Comparison of MLP and KAN',
@@ -99,6 +100,7 @@ export const projects = [
       'Produced documentation that makes the comparison reproducible and easier to inspect.',
     ],
     metric: 'FLOPs',
+    previewImage: '/images/ai-lab-visual.png',
   },
   {
     title: 'School Workflow Analysis',
@@ -112,6 +114,7 @@ export const projects = [
       'Created presentation materials and reports for alignment across technical and non-technical audiences.',
     ],
     metric: 'BA',
+    previewImage: '/images/ai-lab-visual.png',
   },
 ];
 

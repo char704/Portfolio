@@ -1,6 +1,16 @@
-export default function ProjectCard({ project, index }) {
+export default function ProjectCard({ project, index, onPreviewChange }) {
   return (
-    <article className="project-card relative flex min-h-[520px] flex-col justify-between overflow-hidden rounded-[8px] border border-line bg-graphite p-5 shadow-card sm:p-8">
+    <article
+      className="project-card relative flex min-h-[520px] flex-col justify-between overflow-hidden rounded-[8px] border border-line bg-graphite p-5 shadow-card sm:p-8"
+      onPointerEnter={() => onPreviewChange?.(project)}
+      onPointerMove={() => onPreviewChange?.(project)}
+      onPointerLeave={() => onPreviewChange?.(null)}
+      onMouseEnter={() => onPreviewChange?.(project)}
+      onMouseMove={() => onPreviewChange?.(project)}
+      onMouseLeave={() => onPreviewChange?.(null)}
+      onFocus={() => onPreviewChange?.(project)}
+      onBlur={() => onPreviewChange?.(null)}
+    >
       <div className="absolute inset-0 opacity-45 [background-image:linear-gradient(rgba(250,250,248,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(250,250,248,0.07)_1px,transparent_1px)] [background-size:36px_36px]" />
       <div className="line-scan absolute left-0 top-0 h-px w-full bg-accent" />
       <div className="relative z-10 flex items-start justify-between gap-5">

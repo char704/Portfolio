@@ -1,11 +1,12 @@
-import { useRef } from 'react';
+import { lazy, Suspense, useRef } from 'react';
 import gsap from 'gsap';
 import MagneticButton from '../../components/ui/MagneticButton.jsx';
 import { profile } from '../../data/profile.js';
 import { useGsapContext } from '../../hooks/useGsapContext.js';
 import { splitChars } from '../../utils/format.js';
 import HeroMetrics from './HeroMetrics.jsx';
-import HeroVisual from './HeroVisual.jsx';
+
+const HeroVisual = lazy(() => import('./HeroVisual.jsx'));
 
 export default function HeroSection() {
   const scope = useRef(null);
@@ -37,7 +38,16 @@ export default function HeroSection() {
       ref={scope}
       className="relative flex min-h-screen items-end overflow-hidden px-5 pb-8 pt-28 sm:px-8 sm:pb-10 lg:pb-12"
     >
-      <HeroVisual />
+      <Suspense
+        fallback={
+          <div
+            className="hero-mask absolute inset-0 -z-10 bg-ink [background-image:linear-gradient(rgba(0,181,216,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(0,181,216,0.08)_1px,transparent_1px)] [background-size:48px_48px]"
+            aria-hidden="true"
+          />
+        }
+      >
+        <HeroVisual />
+      </Suspense>
       <div className="mx-auto grid w-full max-w-[var(--max-page)] gap-6">
         <div className="max-w-5xl">
           <p className="hero-kicker mb-5 text-sm font-bold uppercase text-accent">Prologue / AI Engineer Portfolio</p>

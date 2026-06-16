@@ -1,5 +1,6 @@
 import ChapterLabel from '../../components/ui/ChapterLabel.jsx';
 import RevealText from '../../components/ui/RevealText.jsx';
+import ScrambleText from '../../components/ui/ScrambleText.jsx';
 import SectionShell from '../../components/ui/SectionShell.jsx';
 import { profile, skillGroups } from '../../data/profile.js';
 import BentoCard from './BentoCard.jsx';
@@ -13,7 +14,7 @@ export default function AboutSection() {
         <div>
           <ChapterLabel index="01" title="Workshop" />
           <h2 className="mt-5 max-w-3xl font-heading text-4xl font-bold leading-tight text-milk sm:text-6xl">
-            Systems thinking, model craft, and careful measurement.
+            <ScrambleText>Systems thinking, model craft, and careful measurement.</ScrambleText>
           </h2>
         </div>
         <RevealText className="max-w-md text-base leading-relaxed text-milk/72">
