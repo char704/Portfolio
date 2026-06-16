@@ -16,14 +16,15 @@ export default function CustomCursor() {
   }, []);
 
   useEffect(() => {
-    if (!isFinePointer) {
+    if (!isFinePointer || !position.isActive) {
+      document.body.classList.remove('has-custom-cursor');
       return undefined;
     }
 
     document.body.classList.add('has-custom-cursor');
 
     return () => document.body.classList.remove('has-custom-cursor');
-  }, [isFinePointer]);
+  }, [isFinePointer, position.isActive]);
 
   if (!isFinePointer) {
     return null;
@@ -31,9 +32,14 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed left-0 top-0 z-[70] hidden h-9 w-9 rounded-full border border-accent/80 bg-accent/10 mix-blend-screen shadow-glow md:block"
+      data-testid="custom-cursor"
+      className={`pointer-events-none fixed left-0 top-0 z-[70] block h-10 w-10 rounded-full border border-accent bg-accent/15 shadow-glow backdrop-blur-[1px] transition-opacity duration-150 ${
+        position.isActive ? 'opacity-100' : 'opacity-0'
+      }`}
       style={{ x, y }}
       aria-hidden="true"
-    />
+    >
+      <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-milk" />
+    </motion.div>
   );
 }
