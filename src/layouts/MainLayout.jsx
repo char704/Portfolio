@@ -36,7 +36,7 @@ export default function MainLayout({ children }) {
   }, [prefersReducedMotion]);
 
   return (
-    <div className="page-shell min-h-screen overflow-hidden bg-ink text-milk">
+    <div className="page-shell min-h-screen overflow-hidden bg-primary text-primary">
       <Preloader />
       <div className="noise-layer" aria-hidden="true" />
       <ScrollProgress />

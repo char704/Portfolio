@@ -52,7 +52,7 @@ export default function HeroSection() {
       <Suspense
         fallback={
           <div
-            className="hero-mask absolute inset-0 -z-10 bg-ink [background-image:linear-gradient(rgba(0,181,216,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(0,181,216,0.08)_1px,transparent_1px)] [background-size:48px_48px]"
+            className="accent-grid-soft hero-mask absolute inset-0 -z-10 bg-ink"
             aria-hidden="true"
           />
         }

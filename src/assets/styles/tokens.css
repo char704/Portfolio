@@ -1,14 +1,31 @@
 :root {
-  color-scheme: dark;
-  --ink: #0f1012;
-  --graphite: #1a1c20;
-  --surface: #43464b;
-  --milk: #fafaf8;
-  --muted: #a9adb4;
-  --accent: #00b5d8;
-  --signal: #7ce7d4;
-  --line: rgba(250, 250, 248, 0.12);
-  --soft-line: rgba(250, 250, 248, 0.07);
-  --shadow-card: 0 24px 80px rgba(0, 0, 0, 0.34);
+  color-scheme: light;
+  --bg-primary: #f9f9f6;
+  --text-primary: #111827;
+  --surface: #e5e7eb;
+  --accent: #0097b2;
+  --ink: var(--bg-primary);
+  --graphite: var(--surface);
+  --milk: var(--text-primary);
+  --muted: color-mix(in srgb, var(--text-primary) 62%, var(--bg-primary));
+  --signal: color-mix(in srgb, var(--accent) 66%, var(--text-primary));
+  --line: color-mix(in srgb, var(--text-primary) 14%, transparent);
+  --soft-line: color-mix(in srgb, var(--text-primary) 8%, transparent);
+  --grid-line: color-mix(in srgb, var(--text-primary) 4%, transparent);
+  --shadow-card: 0 24px 80px rgba(17, 24, 39, 0.12);
   --max-page: 1180px;
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg-primary: #0f1012;
+  --text-primary: #fafaf8;
+  --surface: #43464b;
+  --accent: #00b5d8;
+  --muted: color-mix(in srgb, var(--text-primary) 66%, var(--bg-primary));
+  --signal: color-mix(in srgb, var(--accent) 58%, var(--text-primary));
+  --line: color-mix(in srgb, var(--text-primary) 12%, transparent);
+  --soft-line: color-mix(in srgb, var(--text-primary) 7%, transparent);
+  --grid-line: color-mix(in srgb, var(--text-primary) 3.5%, transparent);
+  --shadow-card: 0 24px 80px rgba(0, 0, 0, 0.34);
 }

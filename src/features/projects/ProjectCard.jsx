@@ -11,7 +11,7 @@ export default function ProjectCard({ project, index, onPreviewChange }) {
       onFocus={() => onPreviewChange?.(project)}
       onBlur={() => onPreviewChange?.(null)}
     >
-      <div className="absolute inset-0 opacity-45 [background-image:linear-gradient(rgba(250,250,248,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(250,250,248,0.07)_1px,transparent_1px)] [background-size:36px_36px]" />
+      <div className="project-card-grid absolute inset-0 opacity-45" />
       <div className="line-scan absolute left-0 top-0 h-px w-full bg-accent" />
       <div className="relative z-10 flex items-start justify-between gap-5">
         <div>

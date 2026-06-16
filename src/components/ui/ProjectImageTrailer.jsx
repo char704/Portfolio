@@ -37,7 +37,7 @@ export default function ProjectImageTrailer({ activeProject }) {
           className="h-full w-full object-cover opacity-80"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(15,16,18,0.88))]" />
+        <div className="preview-vignette absolute inset-0" />
         <div className="absolute bottom-0 left-0 right-0 p-4">
           <p className="text-[11px] font-bold uppercase text-accent">{activeProject?.metric ?? 'AI'}</p>
           <p className="mt-1 font-heading text-lg font-bold leading-tight text-milk">{activeProject?.title}</p>
