@@ -1,7 +1,8 @@
-import { lazy, Suspense, useRef } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import gsap from 'gsap';
 import MagneticButton from '../../components/ui/MagneticButton.jsx';
-import { profile } from '../../data/profile.js';
+import { profile, profileData } from '../../data/profile.js';
 import { useGsapContext } from '../../hooks/useGsapContext.js';
 import { splitChars } from '../../utils/format.js';
 import HeroMetrics from './HeroMetrics.jsx';
@@ -10,7 +11,17 @@ const HeroVisual = lazy(() => import('./HeroVisual.jsx'));
 
 export default function HeroSection() {
   const scope = useRef(null);
+  const [roleIndex, setRoleIndex] = useState(0);
+  const roles = profileData.roles;
   const nameParts = profile.name.toUpperCase().split(' ');
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setRoleIndex((currentIndex) => (currentIndex + 1) % roles.length);
+    }, 2500);
+
+    return () => window.clearInterval(intervalId);
+  }, [roles.length]);
 
   useGsapContext(scope, () => {
     const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
@@ -67,6 +78,20 @@ export default function HeroSection() {
               </span>
             ))}
           </h1>
+          <div className="hero-copy mt-6 h-9 overflow-hidden font-heading text-2xl font-bold text-accent sm:h-11 sm:text-4xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={roles[roleIndex]}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                aria-live="polite"
+              >
+                {roles[roleIndex]}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1fr_0.75fr] lg:items-end">
