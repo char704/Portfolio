@@ -4,6 +4,7 @@ import CommandPalette from '../components/ui/CommandPalette.jsx';
 import CustomCursor from '../components/ui/CustomCursor.jsx';
 import Preloader from '../components/ui/Preloader.jsx';
 import ScrollProgress from '../components/ui/ScrollProgress.jsx';
+import ThemeToggle from '../components/ui/ThemeToggle.jsx';
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion.js';
 
 export default function MainLayout({ children }) {
@@ -41,6 +42,7 @@ export default function MainLayout({ children }) {
       <div className="noise-layer" aria-hidden="true" />
       <ScrollProgress />
       <CustomCursor />
+      <ThemeToggle />
       <CommandPalette />
       {children}
     </div>
