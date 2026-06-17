@@ -167,7 +167,12 @@ a {
 .focus-ring:focus-visible {
   outline-color: var(--accent);
 }
-
+@media (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
 @media (max-height: 760px) and (min-width: 900px) {
   .hero-metrics {
     display: none;
