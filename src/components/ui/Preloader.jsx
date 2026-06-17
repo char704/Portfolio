@@ -50,7 +50,7 @@ export default function Preloader() {
           <div className="h-full bg-accent" style={{ width: `${progress}%` }} />
         </div>
         <p className="mt-5 animate-pulse text-xs font-bold uppercase text-muted">
-          Initializing Lab Environment...
+          Preparing Interface...
         </p>
       </div>
     </div>

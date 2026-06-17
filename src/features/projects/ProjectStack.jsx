@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ProjectImageTrailer from '../../components/ui/ProjectImageTrailer.jsx';
 import { projects } from '../../data/profile.js';
 import { useGsapContext } from '../../hooks/useGsapContext.js';
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js';
 import ProjectCard from './ProjectCard.jsx';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,9 +12,16 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ProjectStack() {
   const scope = useRef(null);
   const [activePreview, setActivePreview] = useState(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useGsapContext(scope, () => {
     const cards = gsap.utils.toArray('.project-card');
+
+    if (prefersReducedMotion) {
+      gsap.set(cards, { clearProps: 'all' });
+      return undefined;
+    }
+
     const media = gsap.matchMedia();
 
     media.add('(min-width: 900px)', () => {
@@ -52,10 +60,10 @@ export default function ProjectStack() {
     });
 
     return () => media.revert();
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
-    <div ref={scope} className="relative min-h-screen py-10">
+    <div ref={scope} className="relative py-10 lg:min-h-screen">
       <ProjectImageTrailer activeProject={activePreview} />
       <div className="relative mx-auto grid max-w-5xl gap-5 rounded-[8px] lg:min-h-[620px] lg:items-center lg:overflow-hidden">
         {projects.map((project, index) => (

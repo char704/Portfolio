@@ -1,4 +1,4 @@
-const tags = ['PyTorch', 'BasicSR', 'CUDA', 'PSNR', 'SSIM', 'KAN', 'FLOPs', 'Model Evaluation'];
+const tags = ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'GSAP', 'Framer Motion', 'Three.js', 'Responsive UI', 'Vite'];
 
 export default function ProjectMarquee() {
   return (

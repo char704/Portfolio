@@ -1,11 +1,11 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Brain, Layout, Server, Terminal } from 'lucide-react';
+import { Code2, Layout, Terminal, Wrench } from 'lucide-react';
 
 const icons = {
-  Brain,
+  Code2,
   Layout,
-  Server,
   Terminal,
+  Wrench,
 };
 
 export default function BentoCard({ category, description, techs = [], icon = 'Terminal', className = '' }) {

@@ -7,6 +7,8 @@ export default function ContactLinks() {
         <a
           key={link.href}
           href={link.href}
+          target={link.external ? '_blank' : undefined}
+          rel={link.external ? 'noopener noreferrer' : undefined}
           className="focus-ring rounded-[8px] border border-line bg-milk/[0.055] p-4 text-sm font-bold uppercase text-milk transition-colors hover:border-accent hover:text-accent"
         >
           {link.label}

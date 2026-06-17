@@ -1,13 +1,14 @@
 # Nguyen Thanh Phuong Portfolio
 
-A single-page React portfolio built with Vite, Tailwind CSS v4, GSAP ScrollTrigger, Framer Motion, and Lenis.
+A single-page Frontend Developer portfolio built with React, Vite, Tailwind CSS v4, GSAP ScrollTrigger, Framer Motion, Three.js, and Lenis.
 
 ## Highlights
 
-- GSAP boot sequence preloader and staggered hero reveal
-- Interactive Three.js neural network hero background
-- Bento workshop, stacked project cards, and floating project preview trailer
-- Command palette easter egg with `Download_CV.pdf`, email, and GitHub actions
+- Focused Frontend Developer positioning with recruiter-friendly navigation
+- Responsive Hero, About, Skills, Projects, Experience, Additional Achievement, and Contact sections
+- Interactive Three.js interface visual, stacked project cards, custom cursor, and command palette
+- Light and dark themes with reduced-motion support
+- Frontend CV download, email, GitHub, and safe external project links
 
 ## Scripts
 
@@ -19,7 +20,7 @@ npm run build
 
 ## Structure
 
-- `src/features`: page chapters for Hero, About, Projects, and Contact
+- `src/features`: page sections for Hero, About, Skills, Projects, Experience, Achievement, and Contact
 - `src/components/ui`: reusable interaction and typography primitives
-- `src/layouts`: Lenis smooth-scroll layout and site frame
-- `src/data/profile.js`: portfolio content extracted from the CV
+- `src/layouts`: Lenis smooth-scroll layout and site frame navigation
+- `src/data/profile.js`: portfolio content and verified profile data

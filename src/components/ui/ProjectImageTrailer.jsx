@@ -32,14 +32,14 @@ export default function ProjectImageTrailer({ activeProject }) {
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
-          src={activeProject?.previewImage ?? '/images/ai-lab-visual.png'}
+          src={activeProject?.previewImage ?? '/images/interactive-portfolio-preview.svg'}
           alt=""
           className="h-full w-full object-cover opacity-80"
           loading="lazy"
         />
         <div className="preview-vignette absolute inset-0" />
         <div className="absolute bottom-0 left-0 right-0 p-4">
-          <p className="text-[11px] font-bold uppercase text-accent">{activeProject?.metric ?? 'AI'}</p>
+          <p className="text-[11px] font-bold uppercase text-accent">{activeProject?.metric ?? 'WEB'}</p>
           <p className="mt-1 font-heading text-lg font-bold leading-tight text-milk">{activeProject?.title}</p>
         </div>
       </div>
