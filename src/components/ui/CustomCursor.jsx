@@ -1,19 +1,13 @@
-import { motion, useSpring } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useMousePosition } from '../../hooks/useMousePosition.js';
-
-const springOptions = {
-  stiffness: 440,
-  damping: 38,
-  mass: 0.35,
-};
 
 export default function CustomCursor() {
   const position = useMousePosition();
   const [isFinePointer, setIsFinePointer] = useState(false);
 
-  const x = useSpring(-18, springOptions);
-  const y = useSpring(-18, springOptions);
+  const x = useMotionValue(-18);
+  const y = useMotionValue(-18);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(pointer: fine)');
