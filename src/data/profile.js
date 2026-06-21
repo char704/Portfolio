@@ -62,6 +62,38 @@ export const profileData = {
   ],
   projects: [
     {
+      id: 'framehub-gallery-mvp',
+      title: 'FrameHub',
+      type: 'Deployed Full-Stack MVP',
+      description:
+        'A deployed full-stack photo gallery platform for uploading, organizing, discovering, and interacting with community photos.',
+      techStack: [
+        'React',
+        'TypeScript',
+        'Vite',
+        'Tailwind CSS',
+        'TanStack Query',
+        'Node.js',
+        'Express',
+        'Prisma',
+        'PostgreSQL',
+        'Cloudinary',
+        'JWT Auth',
+      ],
+      github: 'https://github.com/char704/gallery',
+      liveDemo: 'https://gallery-ebon-six.vercel.app/',
+      metric: 'MVP',
+      previewImage: '/images/framehub-preview.jpg',
+      previewAlt: 'Preview of the FrameHub photo gallery platform.',
+      details: [
+        'Built and deployed a full-stack gallery with React/Vite frontend, Express backend, PostgreSQL, Prisma, and Cloudinary.',
+        'Implemented JWT authentication, photo upload validation, public/private visibility, albums, likes, and comments.',
+        'Added public discovery workflows with Explore, search, tag filtering, sorting, trending tags, and pagination.',
+        'Created reusable gallery components with responsive layouts, accessible controls, and API-driven loading, empty, and error states.',
+        'Protected REST endpoints with validation, authorization checks, rate limiting, and Cloudinary image optimization.',
+      ],
+    },
+    {
       id: 'interactive-developer-portfolio',
       title: 'Interactive Developer Portfolio',
       type: 'Frontend Development',

@@ -1,4 +1,17 @@
-const tags = ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'GSAP', 'Framer Motion', 'Three.js', 'Responsive UI', 'Vite'];
+const tags = [
+  'React',
+  'TypeScript',
+  'Node.js',
+  'Express',
+  'PostgreSQL',
+  'Prisma',
+  'Cloudinary',
+  'Tailwind CSS',
+  'TanStack Query',
+  'GSAP',
+  'Three.js',
+  'Vite',
+];
 
 export default function ProjectMarquee() {
   return (
